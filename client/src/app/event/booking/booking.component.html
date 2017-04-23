@@ -1,49 +1,34 @@
-<div class="codemargonda-eventbooking" id="transparent-limit">
+<div class="codemargonda-eventform" id="transparent-limit">
     <div class="container">
         <div class="code-content">
-            <div class="h2title" style="padding-top: 1em">Kalender Code</div>
-            <div class="code-description">
-                <div class="h3title">
-                    Berbagai event seru!
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="codemargonda-eventform">
-    <div class="container">
-        <div class="code-content">
+            <div class="h2title" style="padding-top: 1em">Booking Ruangan</div>
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-centered">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Tanggal</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <label for="inputTanggal">Tanggal</label>
+                            <input type="text" class="form-control" id="inputTanggal" placeholder="Tanggal" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Durasi</label>
+                            <label for="inputDurasi">Durasi</label>
                             <div class="row">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <label for="exampleInputPassword1">Mulai</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="text" class="form-control" id="inputDurasiMulai" placeholder="Jam">
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <label for="exampleInputPassword1">Selesai</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="text" class="form-control" id="inputDurasiSelesai" placeholder="Jam">
                                 </div>
                             </div>
-
-
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Kebutuhan Lain</label>
                             <div class="dropdown">
-                                <button class="form-control dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" type="text">
+                                <button class="form-control dropdown-toggle" id="dropdownMenuFacilities" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" type="text">
                                 Pilih<span class="caret"></span></button>
 
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuFacilities">
                                     <li>
                                         <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" value="Infokus">Infokus</a>
                                     </li>

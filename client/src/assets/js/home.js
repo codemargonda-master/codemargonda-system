@@ -2,15 +2,19 @@ $(document).ready(function() {
     var scroll_start = 0;
     var startchange = $('#transparent-limit');
     var offset = startchange.offset();
-    $('.navbar-default').css('background-color', 'transparent');
 
+    if ($('#transparent-limit').hasClass('codemargonda-eventform')) {
+        $(".navbar-default").css('background-color', '#c51c1c');
+    } else {
+        $('.navbar-default').css('background-color', 'transparent');
+    }
 
     if (startchange.length) {
         $(document).scroll(function() {
             scroll_start = $(this).scrollTop();
             console.log(scroll_start);
             console.log(offset.top);
-            if ($('#transparent-limit').hasClass('codemargonda-eventbooking')) {
+            if ($('#transparent-limit').hasClass('codemargonda-eventform')) {
                 $(".navbar-default").css('background-color', '#c51c1c');
             } else if (scroll_start > offset.top) {
                 $(".navbar-default").css('background-color', '#c51c1c');
@@ -31,10 +35,12 @@ $(document).ready(function() {
     $('input[name="eventfacilities"]').click(function() {
         if (this.checked) {
             facilitiesEventBook.push(this.value);
+            $('#dropdownMenuFacilities').text(facilitiesEventBook);
             console.log(facilitiesEventBook);
         } else {
             if ((index = facilitiesEventBook.indexOf($(this).val())) !== -1) {
                 facilitiesEventBook.splice(index, 1);
+                $('#dropdownMenuFacilities').text(facilitiesEventBook);
             }
             console.log(facilitiesEventBook);
         }
@@ -44,6 +50,49 @@ $(document).ready(function() {
         console.log("Test");
         console.log(facilitiesEventBook);
     });
+
+    $('#inputTanggal, #inputDurasiMulai').css('cursor', 'pointer');
+    $('#inputTanggal').click(function() {
+        $("#inputTanggal").flatpickr({
+            minDate: "today",
+            dateFormat: "d-m-Y"
+        });
+    });
+
+    function getstarttime() {
+        var now = moment().add(1, 'hours').format('h:00 a');
+        $("#inputDurasiMulai").timepicker({
+            'minTime': now,
+            'maxTime': '20:00',
+            'disableTextInput': true,
+            'timeFormat': 'H:i',
+            'step': 60
+        });
+    }
+
+    function getendtime() {
+        var timestart = $('#inputDurasiMulai').timepicker('getTime');
+        var mintimeend = moment(timestart).add(1, 'hours').format('h:00 a');
+        $("#inputDurasiSelesai").timepicker({
+            'minTime': mintimeend,
+            'maxTime': '20:00',
+            'showDuration': true,
+            'disableTextInput': true,
+            'timeFormat': 'H:i',
+            'step': 60
+        });
+    }
+    $('#inputDurasiMulai').click(function() {
+        $("#inputDurasiMulai").val(getstarttime())
+    });
+
+    $('#inputDurasiSelesai').click(function() {
+        $("#inputDurasiSelesai").val(getendtime())
+    });
+
+
+
+
 });
 
 function sliderslick() {

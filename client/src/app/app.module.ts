@@ -13,6 +13,7 @@ import { UsersComponent } from './users/users.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { EventBookingComponent } from './event/booking/booking.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EventBookingComponent } from './event/booking/booking.component';
     UsersComponent,
     AdminComponent,
     HomeComponent,
-    EventBookingComponent
+    EventBookingComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
