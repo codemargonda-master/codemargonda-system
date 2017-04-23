@@ -1,0 +1,12 @@
+.container-gallery {
+    padding: 2em 1em;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #FEFEFE;
+}
+
+.gallery-thumbnail {
+    width: 120px;
+    height: 80px;
+    margin-bottom: 3px;
+}

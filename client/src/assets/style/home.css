@@ -1,0 +1,391 @@
+body {
+    width: 100%;
+    height: auto;
+}
+
+.navbar {
+    -webkit-box-shadow: 0 3px 6px -4px #ffffff;
+    -moz-box-shadow: 0 34px 6px -4px #ffffff;
+    box-shadow: 0 3px 6px -4px #ffffff;
+    /* the rest of your styling */
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #FFFFF7 !important;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    font-family: 'Roboto', sans-serif;
+    color: #60646D;
+}
+
+.navbar-default .navbar-nav>li>a>.fa {
+    display: none;
+}
+
+#navbar-logo {
+    height: 65px;
+}
+
+.collapse.in {
+    background-color: #c51c1c !important;
+}
+
+.carousel {
+    width: 100%;
+    max-height: 580px !important;
+}
+
+.carousel {
+    max-height: 580px;
+}
+
+.carousel-inner {
+    width: 100%;
+    max-height: 580px !important;
+}
+
+.carousel-inner .item img {
+    width: 100%;
+}
+
+.carousel-caption {
+    top: 30% !important;
+    z-index: 10;
+}
+
+.codemargonda-about,
+.codemargonda-ccc,
+.codemargonda-event-room,
+.codemargonda-galeri {
+    text-align: center;
+}
+
+.code-content {
+    margin: 6em auto;
+}
+
+.socmed>.fa {
+    padding-top: 10px;
+    letter-spacing: 5px;
+}
+
+.h1title {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 42px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.h2title {
+    font-family: 'Helvetica';
+    font-weight: 700;
+    font-size: 32px;
+    color: #000000;
+}
+
+.h3title {
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+}
+
+.h4title {
+    font-family: 'Helvetica';
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.h5title {
+    font-family: 'Helvetica';
+    font-weight: 700;
+    font-size: 21px;
+    color: #000000;
+}
+
+.h6title {
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+}
+
+.code-description {
+    margin: 3em auto;
+}
+
+.code-footer {
+    margin: 2em auto;
+}
+
+.codemargonda-cospace {
+    /* The image used */
+    background-image: url("/assets/img/img-coworking3.JPG");
+    /* Set a specific height */
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 6em auto;
+}
+
+.codemargonda-cospace>.container>.code-content>.h1title,
+.codemargonda-cospace>.container>.code-content>.code-description>.h3title {
+    color: white;
+}
+
+.code-footer>.btn {
+    color: white;
+}
+
+.btn {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    padding: 10px 32px !important;
+    border: 0 none;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-lg.round {
+    border-radius: 24px;
+}
+
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
+    border-radius: 24px;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn.outline:hover,
+.btn.outline:focus,
+.btn.outline:active,
+.btn.outline.active,
+.open>.dropdown-toggle.btn {
+    color: #000000;
+    border-color: white;
+    background: white;
+}
+
+.btn.outline:active,
+.btn.outline.active {
+    border-color: #c51c1c;
+    color: #282830;
+    box-shadow: none;
+}
+
+.codemargonda-event {
+    padding: 3em 0;
+    background-color: white;
+    text-align: center;
+}
+
+.codemargonda-footer {
+    height: auto;
+    background-color: #c51c1c;
+    text-align: center;
+    color: white;
+    padding: 4em 0;
+}
+
+#titlelistfooter {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 36px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+}
+
+.codemargonda-footer>.container>.row {
+    text-align: left;
+    font-family: 'Helvetica';
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.divider-row {
+    color: white;
+}
+
+#copy-footer {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+#socmed-footer>.fa {
+    padding-top: 0;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 50%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.code-alamat {
+    padding: 2em 0;
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+}
+
+.code-contact {
+    padding-top: 2em 0;
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+}
+
+.codemargonda-partner {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.code-img-partner {
+    padding: 2em 0;
+}
+
+.code-img-circle img {
+    width: 150px;
+    padding-bottom: 2em;
+}
+
+#bank-bca {
+    width: 25%;
+}
+
+#bank-indonesia {
+    width: 45%;
+}
+
+#coworking-indonesia {
+    width: 40%;
+}
+
+.codemargonda-program1 {
+    text-align: center;
+}
+
+#collapseAndroid,
+#collapseWeb {
+    background-color: #ffffff !important;
+}
+
+#keterangan-ccc {
+    text-align: left;
+    padding: 2em 0;
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#slider-slick {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#slider-slick img {
+    width: 400px;
+}
+
+.codemargonda-event-list,
+.codemargonda-eventbooking {
+    background-color: #F6F7F2;
+    text-align: center;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 732px) and (-webkit-min-device-pixel-ratio: 1) {
+    body {
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+    }
+    .navbar-default {
+        background: #c51c1c !important;
+        border: none !important;
+    }
+    .navbar-default .navbar-nav>li>a {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: #FFFFF7 !important;
+    }
+    .navbar-default .navbar-nav>li>a:hover {
+        font-family: 'Roboto', sans-serif;
+        color: #60646D;
+    }
+    .navbar-default .navbar-nav>li>a>.fa {
+        display: inline-block;
+    }
+    #navbar-logo {
+        height: 50px;
+    }
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+        background-color: #c51c1c !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: transparent !important;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: white !important;
+    }
+    .collapse.in {
+        background-color: #c51c1c !important;
+    }
+    .h1title {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 32px;
+        color: #000000;
+        text-transform: uppercase;
+    }
+    .h3title {
+        font-family: 'Helvetica';
+        font-weight: 500;
+        font-size: 18px;
+        color: #000000;
+    }
+    .h4title {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        color: #000000;
+    }
+}
