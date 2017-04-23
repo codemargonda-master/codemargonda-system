@@ -60,29 +60,69 @@ $(document).ready(function() {
     });
 
     function getstarttime() {
-        var now = moment().add(1, 'hours').format('h:00 a');
-        $("#inputDurasiMulai").timepicker({
-            'minTime': now,
-            'maxTime': '20:00',
-            'disableTextInput': true,
-            'timeFormat': 'H:i',
-            'step': 60
-        });
+        if (moment().format('HH') >= 20 || moment().format('HH') <= 08) {
+            var minTime = '08:00';
+            var maxTime = '20:00';
+            $("#inputDurasiMulai").timepicker({
+                'minTime': minTime,
+                'maxTime': maxTime,
+                'disableTextInput': true,
+                'timeFormat': 'H:i',
+                'step': 60
+            });
+        } else {
+            var now = moment().add(1, 'hours').format('h:00 a');
+            $("#inputDurasiMulai").timepicker({
+                'minTime': now,
+                'maxTime': '20:00',
+                'disableTextInput': true,
+                'timeFormat': 'H:i',
+                'step': 60
+            });
+        }
     }
 
     function getendtime() {
         var timestart = $('#inputDurasiMulai').timepicker('getTime');
+        var starttime = moment(timestart).format('h:00 a');
         var mintimeend = moment(timestart).add(1, 'hours').format('h:00 a');
-        $("#inputDurasiSelesai").timepicker({
-            'minTime': mintimeend,
-            'maxTime': '20:00',
-            'showDuration': true,
-            'disableTextInput': true,
-            'timeFormat': 'H:i',
-            'step': 60
-        });
+        console.log(timestart);
+        console.log(moment(timestart).format('HH'));
+        if (moment(timestart).format('HH') >= 20 || moment().format('HH') < 8) {
+            var minTime = '08:00';
+            var maxTime = '20:00';
+            $("#inputDurasiSelesai").timepicker({
+                'minTime': minTime,
+                'maxTime': maxTime,
+                'disableTextInput': true,
+                'timeFormat': 'H:i',
+                'step': 60
+            });
+        } else {
+            if (mintimeend > starttime) {
+
+                $("#inputDurasiSelesai").timepicker({
+                    'minTime': mintimeend,
+                    'maxTime': '20:00',
+                    'disableTextInput': true,
+                    'timeFormat': 'H:i',
+                    'step': 60
+                });
+            } else {
+                $("#inputDurasiSelesai").timepicker({
+                    'minTime': mintimeend,
+                    'maxTime': '20:00',
+                    'disableTextInput': true,
+                    'timeFormat': 'H:i',
+                    'step': 60
+                });
+            }
+        }
+
+
     }
     $('#inputDurasiMulai').click(function() {
+
         $("#inputDurasiMulai").val(getstarttime())
     });
 
