@@ -1,5 +1,6 @@
 # Code Margonda
-# ![Codemargonda](src/assets/img/codemargonda-logo-small.png)
+
+# ![Codemargonda](client/src/assets/img/codemargonda-logo-small.png)
 
 |LICENSE| Margodev | CCC | CCC LMS |
 |-------|------|---------|----------|
@@ -39,7 +40,7 @@ Code Margonda web system development aims to facilitate users who want to use ou
 
 ## STACK
 
-![CodemargondaArchitecture](src/assets/img/StackCodeMargondaSystem.jpg)
+![CodemargondaArchitecture](client/src/assets/img/StackCodeMargondaSystem.jpg)
 
 ## Prototype
 

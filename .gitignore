@@ -1,1 +1,3 @@
-server
+#Ignore server
+/server
+.gitignore
