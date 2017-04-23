@@ -328,6 +328,20 @@ body {
     text-align: center;
 }
 
+.codemargonda-eventform {
+    background-color: white;
+    text-align: center;
+}
+
+.col-centered {
+    float: none !important;
+    margin: 0 auto;
+}
+
+.dropdown-menu {
+    width: 100% !important;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 732px) and (-webkit-min-device-pixel-ratio: 1) {
     body {
         width: 100%;

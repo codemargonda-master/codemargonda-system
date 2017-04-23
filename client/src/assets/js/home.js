@@ -26,8 +26,24 @@ $(document).ready(function() {
         }, 10);
     });
 
+    var facilitiesEventBook = [];
 
+    $('input[name="eventfacilities"]').click(function() {
+        if (this.checked) {
+            facilitiesEventBook.push(this.value);
+            console.log(facilitiesEventBook);
+        } else {
+            if ((index = facilitiesEventBook.indexOf($(this).val())) !== -1) {
+                facilitiesEventBook.splice(index, 1);
+            }
+            console.log(facilitiesEventBook);
+        }
+    });
 
+    $('#btnEventBook').click(function() {
+        console.log("Test");
+        console.log(facilitiesEventBook);
+    });
 });
 
 function sliderslick() {
