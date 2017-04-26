@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,Input } from '@angular/core';
+import {BookRoom} from '../event/booking/booking';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',

@@ -4,39 +4,58 @@
             <div class="h2title" style="padding-top: 1em">Booking Ruangan</div>
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-centered">
-                    <form>
+                    <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm.value)">
                         <div class="form-group">
                             <label for="inputTanggal">Tanggal</label>
-                            <input type="text" class="form-control" id="inputTanggal" placeholder="Tanggal" readonly>
+                            <input type="text" class="form-control" id="inputTanggal" name="inputTanggal" placeholder="Tanggal" readonly ngModel>
                         </div>
-                        <div class="form-group">
-                            <label for="inputDurasi">Durasi</label>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                        <label for="inputDurasi">Durasi</label>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
                                     <label for="exampleInputPassword1">Mulai</label>
-                                    <input type="text" class="form-control" id="inputDurasiMulai" placeholder="Jam">
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <label for="exampleInputPassword1">Selesai</label>
-                                    <input type="text" class="form-control" id="inputDurasiSelesai" placeholder="Jam">
+                                    <!--<input type="text" class="form-control" id="inputDurasiMulai" name="inputDurasiMulai" placeholder="Jam" readonly ngModel>-->
+                                    <select class="form-control" id="startTime" name="startTime" ngModel>
+                                         <option selected disabled>Pilih Jam</option>
+                                      <option *ngFor="let jam of Jam" [selected]="jam.id == '08:00'">{{jam.h}}</option>
+                                    </select>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <label for="exampleInputPassword1">Selesai</label>
+                                <!--<input type="text" class="form-control" id="inputDurasiSelesai" name="inputDurasiSelesai" placeholder="Jam" ngModel>-->
+                                <select class="form-control" id="endTime" name="endTime" ngModel>
+                                    <option selected disabled>Pilih Jam</option>
+                                    <option *ngFor="let jam of Jam" [selected]="jam.id == '08:00'">{{jam.h}}</option>
+                                     
+                                       
+                                    </select>
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputFile">Kebutuhan Lain</label>
-                            <div class="dropdown">
-                                <button class="form-control dropdown-toggle" id="dropdownMenuFacilities" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" type="text">
-                                Pilih<span class="caret"></span></button>
 
+                            <div class="dropdown">
+                                <input class="form-control dropdown-toggle" id="dropdownMenuFacilities" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" type="text" placeholder="Pilih Alat" name="dropdownMenuFacilities" ngModelGroup="facilities">
+                                <span class="caret"></span>
+                                <!--<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuFacilities">
+                                    <li *ngFor="let facItem of facilitiesArr; let i = index">
+
+                                        <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" ng-true-value="facItem.facility" ngModel>{{facItem.facility}}</a>
+
+                                    </li>
+                                </ul>-->
                                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuFacilities">
                                     <li>
-                                        <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" value="Infokus">Infokus</a>
+                                        <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" value="Infokus" [(ngModel)]=addFacilities( 'Infokus')>Infokus</a>
                                     </li>
                                     <li>
-                                        <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" value="Sound System">Sound System</a>
+                                        <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" value="Sound System" ngModel>Sound System</a>
                                     </li>
                                     <li>
-                                        <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" value="Bawa Sendiri">Bawa Sendiri</a>
+                                        <a><input id="facilitiesCheckbox" type="checkbox" name="eventfacilities" value="Bawa Sendiri" ngModel>Bawa Sendiri</a>
                                     </li>
 
                                 </ul>

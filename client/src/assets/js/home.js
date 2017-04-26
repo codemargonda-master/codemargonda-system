@@ -12,8 +12,8 @@ $(document).ready(function() {
     if (startchange.length) {
         $(document).scroll(function() {
             scroll_start = $(this).scrollTop();
-            console.log(scroll_start);
-            console.log(offset.top);
+            //console.log(scroll_start);
+            //console.log(offset.top);
             if ($('#transparent-limit').hasClass('codemargonda-eventform')) {
                 $(".navbar-default").css('background-color', '#c51c1c');
             } else if (scroll_start > offset.top) {
@@ -35,41 +35,59 @@ $(document).ready(function() {
     $('input[name="eventfacilities"]').click(function() {
         if (this.checked) {
             facilitiesEventBook.push(this.value);
-            $('#dropdownMenuFacilities').text(facilitiesEventBook);
-            console.log(facilitiesEventBook);
+            $('#dropdownMenuFacilities').val(facilitiesEventBook);
+            //console.log(facilitiesEventBook);
         } else {
             if ((index = facilitiesEventBook.indexOf($(this).val())) !== -1) {
                 facilitiesEventBook.splice(index, 1);
-                $('#dropdownMenuFacilities').text(facilitiesEventBook);
+                $('#dropdownMenuFacilities').val(facilitiesEventBook);
             }
-            console.log(facilitiesEventBook);
+            //console.log(facilitiesEventBook);
         }
     });
 
-    $('#btnEventBook').click(function() {
-        console.log("Test");
-        console.log(facilitiesEventBook);
-    });
+    // $('#btnEventBook').click(function() {
+    //     var dataBook = [];
+
+    //     var event_date = $('#inputTanggal').val();
+    //     var event_stime = $('#inputDurasiMulai').val();
+    //     var event_endtime = $('#inputDurasiSelesai').val();
+    //     var event_facilities = facilitiesEventBook;
+    //     dataBook.push(event_date, event_stime, event_endtime, event_facilities);
+
+    //     console.log(dataBook);
+    // });
 
     $('#inputTanggal, #inputDurasiMulai').css('cursor', 'pointer');
+
     $('#inputTanggal').click(function() {
         $("#inputTanggal").flatpickr({
             minDate: "today",
             dateFormat: "d-m-Y"
         });
     });
+    $('#inputDurasiMulai').click(function() {
+        $("#inputDurasiMulai").flatpickr({
+            minDate: "today",
+            dateFormat: "d-m-Y"
+        });
+    });
 
     function getstarttime() {
+
         if (moment().format('HH') >= 20 || moment().format('HH') <= 08) {
             var minTime = '08:00';
             var maxTime = '20:00';
             $("#inputDurasiMulai").timepicker({
                 'minTime': minTime,
                 'maxTime': maxTime,
-                'disableTextInput': true,
+                'disableTextInput': false,
                 'timeFormat': 'H:i',
-                'step': 60
+                'step': 60,
+                'forceRoundTime': true
             });
+
+
         } else {
             var now = moment().add(1, 'hours').format('h:00 a');
             $("#inputDurasiMulai").timepicker({
@@ -79,6 +97,8 @@ $(document).ready(function() {
                 'timeFormat': 'H:i',
                 'step': 60
             });
+
+
         }
     }
 
@@ -121,17 +141,19 @@ $(document).ready(function() {
 
 
     }
-    $('#inputDurasiMulai').click(function() {
+    // $('#inputDurasiMulai').click(function() {
+    //     getstarttime();
+    //     var timestart = $('#inputDurasiMulai').timepicker('getTime');
+    //     var getTime = $("#inputDurasiMulai").timepicker('getTime');
+    //     console.log(moment(getTime).format('HH:00'))
+    //     $('#inputDurasiMulai').val(moment(getTime).format('HH:00'));
+    //     console.log(timestart);
+    // });
 
-        $("#inputDurasiMulai").val(getstarttime())
-    });
-
-    $('#inputDurasiSelesai').click(function() {
-        $("#inputDurasiSelesai").val(getendtime())
-    });
-
-
-
+    // $('#inputDurasiSelesai').click(function() {
+    //     $("#inputDurasiSelesai").val(getendtime());
+    //     console.log(getendtime());
+    // });
 
 });
 

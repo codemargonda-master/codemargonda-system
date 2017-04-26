@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { EventBookingComponent } from './event/booking/booking.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AdminComponent,
     HomeComponent,
     EventBookingComponent,
-    CheckoutComponent
+    CheckoutComponent,
+   
   ],
   imports: [
     BrowserModule,

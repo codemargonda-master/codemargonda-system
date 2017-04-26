@@ -11,6 +11,7 @@ import { EventComponent }  from './event/event.component';
 import { AdminComponent }  from './admin/admin.component';
 import { UsersComponent } from './users/users.component';
 import { EventBookingComponent } from './event/booking/booking.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const router:  Routes = [
     { path: '' , component: HomeComponent},
@@ -19,7 +20,8 @@ export const router:  Routes = [
      { path: 'ccc' , component: CccComponent},
      { path: 'event' , component: EventComponent},
      { path: 'users' , component: UsersComponent},
-     { path: 'event/booking', component: EventBookingComponent}
+     { path: 'event/booking', component: EventBookingComponent},
+     { path: 'checkout', component: CheckoutComponent}
 ];
 
 export const myrouter: ModuleWithProviders = RouterModule.forRoot(router);
