@@ -5,6 +5,8 @@ $(document).ready(function() {
 
     if ($('#transparent-limit').hasClass('codemargonda-eventform')) {
         $(".navbar-default").css('background-color', '#c51c1c');
+    } else if ($('#transparent-limit').hasClass('codemargonda-checkout')) {
+        $(".navbar-default").css('background-color', '#c51c1c');
     } else {
         $('.navbar-default').css('background-color', 'transparent');
     }
@@ -15,6 +17,8 @@ $(document).ready(function() {
             //console.log(scroll_start);
             //console.log(offset.top);
             if ($('#transparent-limit').hasClass('codemargonda-eventform')) {
+                $(".navbar-default").css('background-color', '#c51c1c');
+            } else if ($('#transparent-limit').hasClass('codemargonda-checkout')) {
                 $(".navbar-default").css('background-color', '#c51c1c');
             } else if (scroll_start > offset.top) {
                 $(".navbar-default").css('background-color', '#c51c1c');
